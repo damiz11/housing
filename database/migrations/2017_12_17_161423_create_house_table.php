@@ -13,7 +13,7 @@ class CreateHouseTable extends Migration
      */
     public function up()
     {
-        Schema::create('house', function (Blueprint $table) {
+        Schema::create('houses', function (Blueprint $table) {
             $table->increments('id');
             $table->string('type',250);
             $table->text('description');

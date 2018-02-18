@@ -14,12 +14,13 @@
     <link rel="stylesheet" type="text/css" href="{{asset('house/vendors/css/ionicons.min.CSS')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('house/resources/css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('house/resources/css/queries.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('house/resources/css/sign_up.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
     <title>Excellent Houses</title>
 
 </head>
 <body>
-    <header class="sticky">
+    <header >
         @yield('header')
     </header>
     <main>

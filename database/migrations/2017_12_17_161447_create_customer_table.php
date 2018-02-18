@@ -13,7 +13,7 @@ class CreateCustomerTable extends Migration
      */
     public function up()
     {
-        Schema::create('customer', function (Blueprint $table) {
+        Schema::create('customers', function (Blueprint $table) {
             $table->increments('id');
             $table->text('name');
             $table->string('email')->unique();

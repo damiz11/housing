@@ -2,18 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\House;
 use Illuminate\Http\Request;
 
 class HouseController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the Houses.
      *
-     * @return \Illuminate\Http\Response
+     * @return array
      */
     public function index()
     {
         //
+        $houses = House::all();
+
+        return view('houses.index', compact('houses'));
     }
 
     /**

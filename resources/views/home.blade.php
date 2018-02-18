@@ -4,17 +4,16 @@
 @include('components.header')
 <div class="hero-text-box">
     <h1>Excellent Accommodation. <br>Your Comfort and Satisfaction is our First Priority.</h1>
-        <div class="inline-fields">
-            <div class="fields">
-                 <input type="text" placeholder="House type">
-            </div>
-
-
-            <a class="btn btn-full" href="# "> Search </a>
+    <div class="inline-fields">
+        <div class="fields">
+            <input type="text" placeholder="House type">
         </div>
 
-            <!-- <a class="btn btn-ghost" href="# "> Show me more </a>-->
-        </div>
+
+        <a class="btn btn-full" href="#"> Search </a>
+    </div>
+
+    <!-- <a class="btn btn-ghost" href="# "> Show me more </a>-->
 </div>
 @endsection
 @section('main')

@@ -13,7 +13,7 @@ class CreateLandlordTable extends Migration
      */
     public function up()
     {
-        Schema::create('landlord', function (Blueprint $table) {
+        Schema::create('landlords', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
         });
