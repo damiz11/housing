@@ -2,10 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\House;
 use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -24,8 +31,14 @@ class PaymentController extends Controller
     public function create()
     {
         //
+        $house = House::find(request('house'));
+        return view('payments.payments')->with('house',$house);
     }
+    public function add($id){
+        $house = House::find($id);
 
+        return view('payments.payments')->with('house',$house);
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -46,6 +59,8 @@ class PaymentController extends Controller
     public function show($id)
     {
         //
+        $house = House::find($id);
+        return view('payments.details')->with('house',$house);
     }
 
     /**

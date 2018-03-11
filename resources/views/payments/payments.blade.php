@@ -48,7 +48,7 @@
         <input class="expire" type="text" placeholder="MM / YYYY"/>
         <label>Security Number</label>
         <input class="ccv" type="text" placeholder="CVC" maxlength="3" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
-        <button class="buy"><i class="material-icons">lock</i> Pay --.-- €</button>
+        <a href="{{route('payments.show', 2)}}" class="buy"><i class="material-icons">lock</i> Pay --.-- €</a>
     </div>
 </div>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js'></script>

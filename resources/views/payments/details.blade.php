@@ -11,11 +11,11 @@
     <title>Payment-Summary</title>
     <link rel="shortcut icon" href="flexport.ico">
     </link>
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="{{asset('house/details/css/bootstrap.css')}}">
     </link>
-    <link rel="stylesheet" href="css/screen.css">
+    <link rel="stylesheet" href="{{asset('house/details/css/screen.css')}}">
     </link>
-    <link rel="stylesheet" href="css/oocss.css">
+    <link rel="stylesheet" href="{{asset('house/details/css/oocss.css')}}">
     </link>
 
 
@@ -25,11 +25,12 @@
     <script type="text/javascript" src=" https://du4nnals2ft9f.cloudfront.net/assets/core2-2d0db4718b125dea72216c9a239830db.js.gz"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
-    <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.CSS">
-    <link rel="stylesheet" type="text/css" href="resources/css/style.css">
-    <link rel="stylesheet" type="text/css" href="resources/css/queries.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('house/vendors/css/normalize.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('house/vendors/css/grid.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('house/vendors/css/ionicons.min.CSS')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('house/resources/css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('house/resources/css/queries.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('house/resources/css/sign_up.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
     <!-- <title>Excellent Houses</title> -->
 </head>
@@ -37,18 +38,7 @@
 <body>
 
 <header>
-    <nav class="sticky">
-        <div class="row">
-            <img src="resources/images/huz1.jpg" alt="huz-tinz" class="logo">
-            <ul class="main-nav">
-                <li> <a href="index.html"> Home </a> </li>
-                <li> <a href="about_us.html"> About_Us </a> </li>
-                <li> <a href="accommodation.html"> Accommodation </a> </li>
-                <li> <a href="sign_up.html"> Sign_Up</a> </li>
-                <li> <a href="log_in.html"> Log_in</a> </li>
-            </ul>
-        </div>
-    </nav>
+    @include('components.header')
     <p></p>
     <br>
     <section class="container">
@@ -64,22 +54,22 @@
                                 <div class="backgroundLowlight typeLooseSpacing typeMidnight typeBold typeCaps phm pvxs bts h7 mvn">basic</div>
                                 <div class="row man pvs bts h6">
                                     <div class="col-md-6 typeLowlight typeCaps h7 mvn typeBold">Name of Occupant</div>
-                                    <div class="col-md-6 text-right"><span>Qudus Bimbo</span><span></span></div>
+                                    <div class="col-md-6 text-right"><span>{{auth()->user()->name}}</span><span></span></div>
                                 </div>
                                 <div class="row man pvs bts h6">
                                     <div class="col-md-6 typeLowlight typeCaps h7 mvn typeBold">Apartment Type</div>
-                                    <div class="col-md-6 text-right"><span>Self-contain</span><span></span></div>
+                                    <div class="col-md-6 text-right"><span>{{$house->type}}</span><span></span></div>
                                 </div>
                             </div>
                             <div>
                                 <div class="backgroundLowlight typeLooseSpacing typeMidnight typeBold typeCaps phm pvxs bts h7 mvn"> House Details</div>
                                 <div class="row man pvs bts h6">
                                     <div class="col-md-6 typeLowlight typeCaps h7 mvn typeBold">House number</div>
-                                    <div class="col-md-6 text-right"><span>34</span><span></span></div>
+                                    <div class="col-md-6 text-right"><span>{{$house->id}}</span><span></span></div>
                                 </div>
                                 <div class="row man pvs bts h6">
                                     <div class="col-md-6 typeLowlight typeCaps h7 mvn typeBold">House rent</div>
-                                    <div class="col-md-6 text-right"><span>#70,000</span><span></span></div>
+                                    <div class="col-md-6 text-right"><span>#{{$house->price}}</span><span></span></div>
                                 </div>
                                 <div class="row man pvs bts h6">
                                     <div class="col-md-6 typeLowlight typeCaps h7 mvn typeBold">Payment</div>
@@ -90,15 +80,15 @@
                                 <div class="backgroundLowlight typeLooseSpacing typeMidnight typeBold typeCaps phm pvxs bts h7 mvn">Facilities</div>
                                 <div class="row man pvs bts h6">
                                     <div class="col-md-6 typeLowlight typeCaps h7 mvn typeBold">Personal Toilet</div>
-                                    <div class="col-md-6 text-right"><span>1</span><span> </span></div>
+                                    <div class="col-md-6 text-right"><span>{{$house->toilet}}</span><span> </span></div>
                                 </div>
                                 <div class="row man pvs bts h6">
                                     <div class="col-md-6 typeLowlight typeCaps h7 mvn typeBold">Personal Bathroom</div>
-                                    <div class="col-md-6 text-right"><span>1</span><span> </span></div>
+                                    <div class="col-md-6 text-right"><span>{{$house->bathroom}}</span><span> </span></div>
                                 </div>
                                 <div class="row man pvs bts h6">
                                     <div class="col-md-6 typeLowlight typeCaps h7 mvn typeBold">Personal kitchen</div>
-                                    <div class="col-md-6 text-right"><span>1</span><span> </span></div>
+                                    <div class="col-md-6 text-right"><span>{{$house->kitchen}}</span><span> </span></div>
                                 </div>
 
                             </div>
@@ -106,11 +96,11 @@
                                 <div class="backgroundLowlight typeLooseSpacing typeMidnight typeBold typeCaps phm pvxs bts h7 mvn">Dates</div>
                                 <div class="row man pvs bts h6">
                                     <div class="col-md-6 typeLowlight typeCaps h7 mvn typeBold">Arrival Date</div>
-                                    <div class="col-md-6 text-right"><span>06/01/2015</span><span></span></div>
+                                    <div class="col-md-6 text-right"><span>{{$house->created_at}}</span><span></span></div>
                                 </div>
                                 <div class="row man pvs bts h6">
                                     <div class="col-md-6 typeLowlight typeCaps h7 mvn typeBold">Departure Date</div>
-                                    <div class="col-md-6 text-right"><span>06/03/2016</span><span></span></div>
+                                    <div class="col-md-6 text-right"><span></span><span></span></div>
                                 </div>
 
                             </div>

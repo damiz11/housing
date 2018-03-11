@@ -262,9 +262,9 @@
                     <!--Property DEtails-->
                     <section class="property-details">
                         <div class="prop-header">
-                            <h3>Self_Contain <span class="prop-label">For Rent</span></h3>
+                            <h3>{{$house->type}} <span class="prop-label">For Rent</span></h3>
                             <div class="info clearfix">
-                                <div class="location"><span class="fa fa-map-marker"></span>&ensp; Mayfair.</div>
+                                <div class="location"><span class="fa fa-map-marker"></span>&ensp;{{$house->location}}</div>
                             </div>
                         </div>
 
@@ -363,29 +363,69 @@
                                 <!-- </div> -->
                                 <div class="info">
                                     <ul>
-                                        <li>Price : &ensp;<span class="price">#70,000</span></li>
+                                        <li>Price : &ensp;<span class="price">#{{$house->price}}</span></li>
                                         <li>Area : &ensp;&ensp;<span class="area">Mayfair</span></li>
                                     </ul>
                                 </div>
                                 <div class="text-content">
-                                    <p>We LOVE our new home and constantly tell people that if they are going to build, they need to use Excellent houses! Mike and Carl made the whole experience wonderful! I've never said that about a home building
-                                        experience before. They were trustworthy and FUN to work with! Price: #70,000.</p>
+                                    <p>
+                                        {{$house->description}}
+                                    </p>
                                     <!-- <p>We LOVE our new home and constantly tell people that if they are going to build, they need to use Excellent houses! Mike and Carl made the whole experience wonderful! I've never said that about a home building experience
                                 before. They were trustworthy and FUN to work with!</p> -->
                                 </div>
                                 <div class="property-specs">
                                     <ul class="specs-list">
                                         <li>
-                                            <div class="icon"><span class="flaticon-double-king-size-bed"></span></div> 1 Bedroom</li>
+                                            <div class="icon"><span class="flaticon-double-king-size-bed"></span></div> {{$house->rooms}} Bedroom</li>
                                         <li>
-                                            <div class="icon"><span class="flaticon-vintage-bathtub"></span></div> 1 Bathroom & 1 Toilet</li>
+                                            <div class="icon"><span class="flaticon-vintage-bathtub"></span></div> {{$house->bathroom}} Bathroom & {{$house->toilet}} Toilet</li>
                                         <li>
-                                            <div class="icon"><span class="flaticon-private-garage"></span></div> 02 Car Parking</li>
+                                            <div class="icon"><span class="flaticon-private-garage"></span></div> {{$house->kitchen}} Car Parking</li>
                                         <!-- <li> -->
                                         <!-- <div class="icon"><span class="flaticon-copy"></span></div> 1040 sq ft</li> -->
                                     </ul>
                                 </div>
                             </div>
+                        </div>
+                        <div align="center">
+                            <a href="{{route('add-payment', $house->id)}}">Make Payment</a>
+                            <style>
+                                .btn:link,
+                                .btn:visited,
+                                input[type=submit] {
+                                    display: inherit;
+                                    padding: 10px 30px;
+                                    font-weight: 300;
+                                    text-decoration: none;
+                                    border-radius: 200px;
+                                    transition: background-color 0.2s, border 0.2s, color 0.2s;
+                                    text-align: right;
+                                }
+
+                                .btn-full:link,
+                                .btn-full:visited,
+                                input[type=submit] {
+                                    background-color: #e67e22;
+                                    border: 1px solid #e67e22;
+                                    color: #fff;
+                                    margin-right: 10px;
+                                    margin-left: 70px;
+                                }
+
+                                .btn:hover,
+                                .btn:active,
+                                input[type=submit]:hover,
+                                input[type=submit] :active {
+                                    background-color: #cf6d17;
+                                }
+
+                                .btn-full:hover,
+                                .btn-full:active,
+                                input[type=submit] {
+                                    border: 1px solid #e67e17;
+                                }
+                            </style>
                         </div>
                 </div>
 

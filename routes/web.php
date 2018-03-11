@@ -23,7 +23,8 @@ Route::get('/about','HomeController@about')->name('about');
 Route::resource('accommodation','HouseController');
 
 Route::get('logout', "Auth\LoginController@logout")->name('logout');
-
+Route::resource('payments','PaymentController');
+Route::get('payments/add/{id}', 'PaymentController@add')->name('add-payment');
 Route::get('test',function (){
     return view('payments.payments');
 });
