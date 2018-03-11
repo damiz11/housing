@@ -30,4 +30,8 @@ class HomeController extends Controller
 
         return view('about');
     }
+
+    public function show($id){
+        return view('houses.show');
+    }
 }

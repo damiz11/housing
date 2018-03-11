@@ -39,8 +39,12 @@
             @foreach($houses as $house)
                 <div class="col span-1-of-4 box">
                     <img src="{{asset('house/resources/images/lisbon-3.jpg')}}" alt="lisbon">
-                    <h3>{{$house->location}} <br> {{$house->type}}
-                    </h3>
+
+                    <a href="{{route('accommodation.show',$house->id)}}">
+                        <h3>{{$house->location}} <br> {{$house->type}}
+                        </h3>
+                    </a>
+
                     <div class="city-feature">
                         <i class="ion-ios-person icon-small"></i> 08056748356</div>
 

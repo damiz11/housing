@@ -21,3 +21,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/about','HomeController@about')->name('about');
 
 Route::resource('accommodation','HouseController');
+
+Route::get('logout', "Auth\LoginController@logout")->name('logout');
+
+Route::get('test',function (){
+    return view('payments.payments');
+});
